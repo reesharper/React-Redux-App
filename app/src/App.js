@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchJokes } from './actions/actions'
+
+const App = (props) => {
+
+  useEffect(() => {
+    props.fetchJokes();
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Joke Generator</h2>
+      {props.isLoading ? <p>Loading jokes...</p> : null}
+      {props.error ? <p style={{ color: "red" }}>{props.error}</p> : null}
+      {props.jokes.map((joke) => (
+        <div className='joke'>
+          <h3>{joke.setup}</h3>
+          <h4> {joke.punchline} </h4>
+        </div>
+      ))}
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.isLoading,
+    jokes: state.jokeData,
+    error: state.error
+  };
+};
+
+export default connect(mapStateToProps, { fetchJokes })(App);
