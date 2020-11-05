@@ -14,6 +14,7 @@ const App = (props) => {
   return (
     <div>
       <h2>Joke Generator</h2>
+      <div className='jokes'>
       {props.isLoading ? <p>Loading jokes...</p> : null}
       {props.error ? <p style={{ color: "red" }}>{props.error}</p> : null}
       {props.jokes.map((joke) => (
@@ -22,6 +23,7 @@ const App = (props) => {
           <h4> {joke.punchline} </h4>
         </div>
       ))}
+      </div>
     </div>
   );
 };
