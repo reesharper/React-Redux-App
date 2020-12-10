@@ -11,9 +11,9 @@ export const getPics = () => {
     dispatch({type:FETCHING_PIC_START})
 
     axios
-      .get('https://picsum.photos/600')
+      .get('https://picsum.photos/960/540')
       .then(res => {
-        dispatch({type:FETCHING_PIC_SUCCESS, payload:'https://picsum.photos/600'})
+        dispatch({type:FETCHING_PIC_SUCCESS, payload:'https://picsum.photos/960/540'})
       })
       .catch(err => {
         dispatch({type:FETCHING_PIC_FAIL, payload:err.response.message})

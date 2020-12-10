@@ -14,7 +14,7 @@ const App =({ image, isFetching, error, getPics }) => {
   }
 
   if (isFetching) {
-    return <h2>Finding your image</h2>
+    return <img src='https://developer.roblox.com/assets/blt0fa990a7507d7a41/Loading-Screen-Animation.png' className='loading' alt='background scenery'/>
   }
 
   const handleClick = () => {
@@ -23,8 +23,9 @@ const App =({ image, isFetching, error, getPics }) => {
 
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <h1>Background Tester</h1>
       <button onClick={handleClick}>Get New Image</button>
+      <br />
       <img src={image} alt='background scenery'/>
     </div>
   );

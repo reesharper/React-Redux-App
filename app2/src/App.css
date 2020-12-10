@@ -1,38 +1,29 @@
+html {
+  /* background-color: #282c34; */
+  background-image: url('https://www.digitalartsonline.co.uk/cmsdata/slideshow/3684159/eizo_colour_edge_cg2730_0008.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .App {
   text-align: center;
+  /* color: white; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  margin-right: 5.7%;
+  margin-top: 2.5%;
+  width: 920px;
+  height: 515px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loading img {
+  margin-right: 5.7%;
+  margin-top: 2.5%;
+  width: 920px;
+  height: 515px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
