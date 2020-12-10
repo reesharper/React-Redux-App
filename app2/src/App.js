@@ -14,7 +14,7 @@ const App =({ image, isFetching, error, getPics }) => {
   }
 
   if (isFetching) {
-    return <img src='https://developer.roblox.com/assets/blt0fa990a7507d7a41/Loading-Screen-Animation.png' className='loading' alt='background scenery'/>
+    return <div className='loader'></div>
   }
 
   const handleClick = () => {
